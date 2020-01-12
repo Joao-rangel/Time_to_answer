@@ -2,12 +2,14 @@
   "name": "time_to_answer",
   "private": true,
   "dependencies": {
-    "bootstrap": "4.3.1",
+    "bootstrap": "^4.4.1",
     "fastclick": "1.0.6",
     "font-awesome": "4.6.3",
     "jquery": "^3.4.1",
     "malihu-custom-scrollbar-plugin": "^3.1.5",
-    "nprogress": "^0.2.0"
+    "nprogress": "^0.2.0",
+    "popper.js": "^1.16.0",
+    "turbolinks": "5.2.0"
   },
   "version": "1.0.0",
   "main": "index.js",
