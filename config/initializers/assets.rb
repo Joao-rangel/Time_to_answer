@@ -17,3 +17,6 @@ Rails.application.config.assets.precompile += %w( users_backoffice.js users_back
 
 # /lib/assets
 Rails.application.config.assets.precompile += %w( custom.js custom.css )
+
+# /vendor/assets
+Rails.application.config.assets.precompile += %w( jquery-2.2.3/dist/jquery )
