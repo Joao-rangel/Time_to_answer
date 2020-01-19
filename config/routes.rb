@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :admins_backoffice do
     get 'welcome/index'
-    resources :admins, only: [:index, :edit] # cria todas as rotas padrão, only filtra as necessárias
+    resources :admins, only: [:index, :edit, :update] # cria todas as rotas padrão, only filtra as necessárias
     #get 'admins/index'
     #get 'admins/edit/:id', to: 'admins#edit'
   end
