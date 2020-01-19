@@ -1,43 +1,39 @@
-<!-- Begin Page Content -->
-<div class="container-fluid">
-
-  <!-- DataTales Example -->
-  <div class="card shadow mb-4">
-    <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Administradores</h6>
-    </div>
-    <div class="card-body">
-      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Email</th>            
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-        <% @admins.each do |admin| %>
-          <tr>
-            <td style="width: 80px"><%= admin.id %></td>
-            <td><%= admin.email %></td>
-            <td style="width: 110px">
-              <button class="btn btn-warning btn-circle"> <%# editar %>
-                <%= link_to edit_admins_backoffice_admin_path(admin) do %>
-                <span style="color: White">
-                  <i class="fas fa-edit" style="white"></i>
-                </span>
-                <% end %>
-              </buttom>
-              <button class="btn btn-danger btn-circle"> <%# excluir %>
-                <span style="color: White">
-                  <i class="fas fa-trash-alt"></i>
-                </span>
-              </buttom>
-            </td>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
-    </div>
+<!-- DataTales -->
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">Administradores</h6>
+  </div>
+  <div class="card-body table-responsive">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Email</th>            
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @admins.each do |admin| %>
+        <tr>
+          <td style="width: 80px"><%= admin.id %></td>
+          <td><%= admin.email %></td>
+          <td style="width: 110px">
+            <button class="btn btn-primary btn-circle"> <%# editar %>
+              <%= link_to edit_admins_backoffice_admin_path(admin) do %>
+              <span style="color: White">
+                <i class="fas fa-edit" style="white"></i>
+              </span>
+              <% end %>
+            </buttom>
+            <button class="btn btn-danger btn-circle"> <%# excluir %>
+              <span style="color: White">
+                <i class="fas fa-trash-alt"></i>
+              </span>
+            </buttom>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
