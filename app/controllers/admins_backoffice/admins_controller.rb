@@ -7,6 +7,19 @@ before_action :set_admin, only: [:edit, :update]
     @admins = Admin.all
   end
 
+  def new
+    @admin = Admin.new
+  end
+
+  def create
+    @admin = Admin.new(params_admin)
+    if @admin.save # caso crie adm, voltar para a tabela de adm e exibir mensagem
+      redirect_to admins_backoffice_admins_path, notice: "Adm criado com sucesso."
+    else #caso não, voltar para a página de criação (pág. atual)
+      render :new
+    end
+  end
+
   def edit
   end
 

@@ -9,22 +9,22 @@
         <tr>
           <th>#</th>
           <th>Email</th>            
-          <th></th>
+          <th><%# criar novo adm %>
+            <%= link_to new_admins_backoffice_admin_path, class:"btn btn-success btn-block" do %>
+                <i class="fas fa-user-plus" style="white"></i> Novo
+            <% end %>
+          </th>
         </tr>
       </thead>
       <tbody>
       <% @admins.each do |admin| %>
         <tr>
-          <td style="width: 80px"><%= admin.id %></td>
+          <td style="width: 65px"><%= admin.id %></td>
           <td><%= admin.email %></td>
-          <td style="width: 110px">
-            <button class="btn btn-primary btn-circle"> <%# editar %>
-              <%= link_to edit_admins_backoffice_admin_path(admin) do %>
-              <span style="color: White">
+          <td style="width: 113px">
+            <%= link_to edit_admins_backoffice_admin_path(admin), class:"btn btn-primary btn-circle" do %><%# excluir adm%>
                 <i class="fas fa-edit" style="white"></i>
-              </span>
-              <% end %>
-            </buttom>
+            <% end %>
             <button class="btn btn-danger btn-circle"> <%# excluir %>
               <span style="color: White">
                 <i class="fas fa-trash-alt"></i>

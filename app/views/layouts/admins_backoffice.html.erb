@@ -2,7 +2,6 @@
 <html>
 
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,8 +12,8 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-  <%= stylesheet_link_tag    'application' %>
-  <%= stylesheet_link_tag    'admins_backoffice' %>
+  <%= stylesheet_link_tag 'application' %>
+  <%= stylesheet_link_tag 'admins_backoffice' %>
 
   <!-- Custom fonts for this template-->
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -30,54 +29,44 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <%= link_to admins_backoffice_welcome_index_path, class:"sidebar-brand d-flex align-items-center justify-content-center" do %>
         <div class="sidebar-brand-icon">
           <i class="fas fa-cogs"></i>
         </div>
         <div class="sidebar-brand-text mx-3">Admin Area</div>
-      </a>
+      <% end %>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
+      <hr class="sidebar-divider my-0"><!-- Divider -->
 
       <!-- Nav Item - Adms -->
       <li class="nav-item">
-      <%= link_to admins_backoffice_welcome_index_path do %>
-        <buttom class="nav-link">
+        <%= link_to admins_backoffice_welcome_index_path, class:"nav-link" do %>
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
-        </buttom>
-      <% end %>
+        <% end %>
       </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
+      <hr class="sidebar-divider my-0"><!-- Divider -->
 
       <!-- Nav Item - Adms -->
       <li class="nav-item">
-      <%= link_to admins_backoffice_admins_path do %>
-        <buttom class="nav-link">
+        <%= link_to admins_backoffice_admins_path, class:"nav-link" do %>
           <i class="fas fa-users"></i>
           <span>Administradores</span>
-        </buttom>
-      <% end %>
+        <% end %>
       </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
+      <hr class="sidebar-divider my-0"><!-- Divider -->
 
       <!-- Nav Item - Adms -->
       <li class="nav-item">
-      <%= link_to root_path do %>
-        <buttom class="nav-link">
+        <%= link_to root_path, class:"nav-link" do %>
           <i class="fas fa-home"></i>
-          <span>Voltar</span>
-        </buttom>
-      <% end %>
+          <span>Voltar para home</span>
+        <% end %>
       </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
+      <hr class="sidebar-divider d-none d-md-block"><!-- Divider -->
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
