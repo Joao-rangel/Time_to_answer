@@ -22,14 +22,13 @@
           <td style="width: 65px"><%= admin.id %></td>
           <td><%= admin.email %></td>
           <td style="width: 113px">
-            <%= link_to edit_admins_backoffice_admin_path(admin), class:"btn btn-primary btn-circle" do %><%# excluir adm%>
+            <%= link_to edit_admins_backoffice_admin_path(admin), class:"btn btn-primary btn-circle" do %><%# editar admin %>
                 <i class="fas fa-edit" style="white"></i>
             <% end %>
-            <button class="btn btn-danger btn-circle"> <%# excluir %>
-              <span style="color: White">
-                <i class="fas fa-trash-alt"></i>
-              </span>
-            </buttom>
+            <%# excluir admin %>
+            <%= link_to admins_backoffice_admin_path(admin), method: :delete, class:"btn btn-danger btn-circle", data: {confirm: "Deseja realmente excluir o admin #{admin.email}?"} do %>
+                <i class="fas fa-trash-alt" style="white"></i>
+            <% end %>
           </td>
         </tr>
       <% end %>
