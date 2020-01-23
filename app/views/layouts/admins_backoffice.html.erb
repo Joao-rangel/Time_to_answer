@@ -170,7 +170,7 @@
 
   <% if notice %>
     <%= javascript_tag do %>
-      $.bootstrapGrowl('<%= notice %>', {type: 'info'});
+      $.bootstrapGrowl('<%= notice %>', {type: 'info', align: 'center', width: 'auto'});
     <% end %>
   <% end %>
 </body>
