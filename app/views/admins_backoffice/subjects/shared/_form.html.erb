@@ -1,0 +1,33 @@
+<% if @subject.errors.any? %> <%# exibe mensagem caso algum erro impeça a edição %>
+  <div class="card bg-danger text-white shadow">
+    <div class="card-body">
+      Atenção
+        <% @subject.errors.full_messages.each do |message| %>
+          <li class="small"><%= message %></li>
+        <% end %>
+    </div>
+  </div>
+<% end %>
+
+<!-- DataTales -->
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary"><%= "#{action_message} tópico" %></h6>
+  </div>
+  <div class="card-body">
+  <%= form_with(model: [:admins_backoffice, @subject ], local: true) do |form| %><%# local: true ->envia em HTML para o controler; padrão = JS %>
+    <form class="mr-auto ml-md-3 my-2 my-md-0 mw-100">
+      <div class="form-group">
+        <%= form.label :description %>
+        <%= form.text_field :description, class:"form-control bg-light", placeholder:"Nome do tópico..." %>
+      </div>
+
+      <button class="btn btn-primary btn-icon-split">
+        <span class="icon text-white-50">
+          <i class="fas fa-arrow-right"></i>
+        </span>
+        <span class="text">Enviar</span>
+      </button>
+    <% end %>
+  </div>
+</div>

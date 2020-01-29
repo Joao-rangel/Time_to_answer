@@ -1,0 +1,38 @@
+<!-- DataTales -->
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">Tópicos</h6>
+  </div>
+  <div class="card-body table-responsive">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Tópico</th>            
+          <th><%# criar novo %>
+            <%= link_to new_admins_backoffice_subject_path, class:"btn btn-success btn-block" do %>
+                <i class="fas fa-user-plus" style="white"></i> Novo
+            <% end %>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @subjects.each do |subject| %>
+        <tr>
+          <td style="width: 65px"><%= subject.id %></td>
+          <td><%= subject.description %></td>
+          <td style="width: 113px">
+            <%= link_to edit_admins_backoffice_subject_path(subject), class:"btn btn-primary btn-circle" do %><%# editar %>
+                <i class="fas fa-edit" style="white"></i>
+            <% end %>
+            <%# excluir %>
+            <%= link_to admins_backoffice_subject_path(subject), method: :delete, class:"btn btn-danger btn-circle", data: {confirm: "Deseja realmente excluir o tópico #{subject.description}?"} do %>
+                <i class="fas fa-trash-alt" style="white"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

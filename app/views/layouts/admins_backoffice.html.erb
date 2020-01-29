@@ -38,7 +38,7 @@
 
       <hr class="sidebar-divider my-0"><!-- Divider -->
 
-      <!-- Nav Item - Adms -->
+      <!-- Nav Item - Admin Index -->
       <li class="nav-item">
         <%= link_to admins_backoffice_welcome_index_path, class:"nav-link" do %>
           <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -48,7 +48,7 @@
 
       <hr class="sidebar-divider my-0"><!-- Divider -->
 
-      <!-- Nav Item - Adms -->
+      <!-- Nav Item - Admins -->
       <li class="nav-item">
         <%= link_to admins_backoffice_admins_path, class:"nav-link" do %>
           <i class="fas fa-users"></i>
@@ -58,7 +58,27 @@
 
       <hr class="sidebar-divider my-0"><!-- Divider -->
 
-      <!-- Nav Item - Adms -->
+      <!-- Nav Item - Tópicos -->
+      <li class="nav-item">
+        <%= link_to admins_backoffice_subjects_path, class:"nav-link" do %>
+          <i class="fas fa-tags"></i>
+          <span>Tópicos</span>
+        <% end %>
+      </li>
+
+      <hr class="sidebar-divider my-0"><!-- Divider -->
+
+      <!-- Nav Item - Questões -->
+      <li class="nav-item">
+        <%= link_to admins_backoffice_questions_path, class:"nav-link" do %>
+          <i class="fas fa-chalkboard-teacher"></i>
+          <span>Questões</span>
+        <% end %>
+      </li>
+
+      <hr class="sidebar-divider my-0"><!-- Divider -->
+
+      <!-- Nav Item - Voltar p/ home -->
       <li class="nav-item">
         <%= link_to root_path, class:"nav-link" do %>
           <i class="fas fa-home"></i>
