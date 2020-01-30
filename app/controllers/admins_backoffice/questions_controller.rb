@@ -1,9 +1,9 @@
 class AdminsBackoffice::QuestionsController < AdminsBackofficeController
 before_action :set_question, only: [:edit, :update, :destroy]
-before_action :set_subjects, only: [:new, :edit, :update, :create]
+before_action :set_subjects, except: [:index, :delete]
 
   def index
-    @questions = Question.order('subject_id').all
+    @questions = Question.includes(:subject).order(:subject_id, :id)
   end
 
   def new
@@ -40,7 +40,7 @@ before_action :set_subjects, only: [:new, :edit, :update, :create]
 
   private
   def set_subjects
-    @subject_options = Subject.all.pluck(:description, :id)
+    @subjects = Subject.all
   end
 
   def set_question
