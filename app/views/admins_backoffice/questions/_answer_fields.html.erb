@@ -1,0 +1,13 @@
+<div class="nested-fields my-md-3">
+  <%= f.label :description %></br>
+  
+  <div class="form-row align-items-center ml-md-2">
+  <div class="col-sm-4">
+    <%= f.text_field :description, class:"form-control bg-light", placeholder:"Insira a alternativa..." %>
+  </div>
+  <div class="col">
+    <%= f.check_box :correct %> Correta?
+    <%= link_to_remove_association('Remover', f) %>
+  </div>
+  </div>
+</div>

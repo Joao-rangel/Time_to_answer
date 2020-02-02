@@ -30,6 +30,13 @@
                                   {include_blank: 'Selecione o tópico...'}, {class:"form-control bg-light"}) %>
       </div>
 
+      <div id='answers'>
+        <%= form.fields_for :answers do |answer| %>
+          <%= render partial: 'answer_fields', locals: {f: answer} %>
+        <% end %>
+        <%= link_to_add_association 'Adicionar Resposta', form, :answers %>
+      </div>
+
       <button class="btn btn-primary btn-icon-split">
         <span class="icon text-white-50">
           <i class="fas fa-arrow-right"></i>

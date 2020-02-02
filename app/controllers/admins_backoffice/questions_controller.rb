@@ -48,6 +48,7 @@ before_action :set_subjects, except: [:index, :delete]
   end
 
   def params_question
-    params.require(:question).permit(:description, :subject_id) # limita os dados que serão enviados (segurança)
+    params.require(:question).permit(:description, :subject_id,
+      answers_attributes: [:id, :description, :correct, :_destroy])
   end
 end

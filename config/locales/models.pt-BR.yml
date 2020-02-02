@@ -22,5 +22,7 @@
       subject:
         description: Descrição
       question:
-        description: Descrição
+        description: Pergunta
         subject: Tópico
+      answer:
+        description: Alternativa

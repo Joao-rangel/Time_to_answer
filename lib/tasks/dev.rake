@@ -8,7 +8,7 @@ namespace :dev do
   desc "Configura o ambiente de desenvolvimento"
   task setup: :environment do
     if Rails.env.development?
-      show_spinner("Apagando BD...") { %x(rails db:drop) }
+      show_spinner("Apagando BD...") { %x(rails db:drop:_unsafe) }
       show_spinner("Criando BD...") { %x(rails db:create) }
       show_spinner("Migrando BD...") { %x(rails db:migrate) }
       show_spinner("Cadastrando administrador padrão...") { %x(rails dev:add_default_admin) }
@@ -61,11 +61,30 @@ namespace :dev do
   desc "Adiciona perguntas e respostas"
   task add_questions: :environment do
     Subject.all.each do |subject|
-      rand(3..5).times do |i|
-        Question.create!(  
+      rand(3..6).times do |i|
+        # Array criado para criar cada questão
+        params = { question: {
           description: "#{Faker::Lorem.question}",
-          subject: subject
-        )
+          subject: subject,
+          answers_attributes: []
+        } }
+        
+        # Array com as hashs p/ answers
+        answers_array = params[:question][:answers_attributes] 
+
+        # Cria cada resposta c/ padrão "incorreto"
+        rand(2..5).times do |j|
+          answers_array.push(
+            description: "#{Faker::Lorem.sentence}",
+            correct: false
+          )
+        end
+
+        # seleciona uma resposta como "correta"
+        answers_array[rand(answers_array.count)][:correct] = true
+
+        # salva a questão no db
+        Question.create!(params[:question])
       end
     end
   end
