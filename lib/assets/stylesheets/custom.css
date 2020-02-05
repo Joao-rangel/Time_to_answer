@@ -892,7 +892,7 @@
   content: "\e260"; }
 
 .left_col {
-  background: #2A3F54; }
+  background-image: linear-gradient(180deg, #d53838 10%, #e44723 100%); }
 
 .container {
   width: 100%;
@@ -1120,7 +1120,7 @@ body .container.body .right_col {
 .nav_title {
   width: 230px;
   float: left;
-  background: #2A3F54;
+  background: #d53838 10%;
   border-radius: 0;
   height: 57px;
   padding: 0px; }
@@ -1479,7 +1479,7 @@ a:hover, a:focus {
 
 .nav.side-menu > li.active > a {
   text-shadow: rgba(0, 0, 0, 0.25) 0 -1px 0;
-  background: linear-gradient(#334556, #2C4257), #2A3F54;
+  background: linear-gradient(#ff4646, #993711), #ae1313;
   box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0; }
 
 .navbar-brand, .navbar-nav > li > a {
@@ -2313,10 +2313,10 @@ span.right {
   bottom: 0px;
   clear: both;
   display: block;
-  padding: 5px 0 0 0;
+  padding: 2px 0 0 0;
   position: fixed;
   width: 230px;
-  background: #2A3F54; }
+  background: #afafaf; }
 
 .sidebar-footer a {
   padding: 7px 0 3px;
@@ -2325,7 +2325,7 @@ span.right {
   font-size: 17px;
   display: block;
   float: left;
-  background: #172D44; }
+  background: #e44723 100%; }
 
 .sidebar-footer a:hover {
   background: #425567; }
