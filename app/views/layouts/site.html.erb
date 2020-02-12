@@ -20,7 +20,7 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <%= link_to 'Time To Answer', root_path, class:"navbar-brand" %>
 
@@ -65,10 +65,10 @@
   </nav>
 
   <!-- Image Section - set the background image for the header in the line below -->
-  <section class="py-5 bg-image-full" style="background-image: url('https://images-americanas.b2w.io/produtos/01/00/images/94770/2/94770293_1GG.jpg');">
+  <section class="pt-1 bg-image-full" style="background-image: url('https://images-americanas.b2w.io/produtos/01/00/images/94770/2/94770293_1GG.jpg'); height: 180px;">
     <section class="container">  
-      <div class="card py-4 px-5 mt-5" style="width: 33rem;">
-        <h3><%= params[:term] ? "Resultados para a busca: \"#{params[:term]}\"" : 'Ultimas perguntas cadastradas.' %></h3>
+      <div class="card pt-4 pb-3 px-5 mt-5" style="width: 30rem;">
+        <h5><%= params[:term] ? "Resultados para a busca: \"#{params[:term]}\"" : 'Ultimas perguntas cadastradas.' %></h5>
       </div>
     </section>
     <div style="height: 80px;"></div>

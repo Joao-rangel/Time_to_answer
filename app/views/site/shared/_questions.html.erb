@@ -1,34 +1,40 @@
 <% @questions.each do |question| %>
-  <div class="container pb-4">
-    <div class="card">
-      <h4 class="card-header bg-secondary text-white">
-        <span class="badge badge-pill 
-          <% case question.subject_id %>
-            <% when 1 %>
-              badge-warning
-            <% when 2 %>
-              badge-danger
-            <% when 3 %>
-              badge-info
-            <% when 4 %>
-              badge-success
-            <% else %>
-              badge-primary
-          <% end %>
-        ">
-          <%= question.subject.description %>
-        </span>
-        <%= question.description %>
-      </h4>
-      <div class="card-body">
-        <ul>
+  <%= form_with url: site_answer_path do |form| %>
+    <div class="container pb-4">
+      <div class="card">
+        <h6 class="card-header bg-secondary text-white">
+          <span class="badge badge-pill 
+            <% case question.subject_id %>
+              <% when 1 %>
+                badge-warning
+              <% when 2 %>
+                badge-danger
+              <% when 3 %>
+                badge-info
+              <% when 4 %>
+                badge-success
+              <% else %>
+                badge-primary
+            <% end %>
+            "><%= question.subject.description %>
+          </span>
+          <%= question.description %>
+        </h6>
+        <div class="card-body">
           <% question.answers.each do |answer| %>
-            <li><%= answer.description %></li>
+            <div class="form-check">
+              <label class="form-check-label" id='answer_option_<%= answer.id %>'>
+                <%= radio_button_tag 'answer_id', answer.id, false, class: "form-check-input" %>
+                <%= answer.description %>
+              </label>
+            </div>
           <% end %>
-        </ul>
+          </br>
+          <%= form.submit 'Responder', class:"btn btn-primary btn-sm" %>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
 <div class="container-fluid">
   <div class="row justify-content-center">

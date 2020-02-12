@@ -1,0 +1,11 @@
+var element = document.getElementById("answer_option_<%= @answer.id %>");
+  
+element.style.fontWeight = "bold";
+
+<% if @answer.correct %>
+  element.style.color = "green";
+
+<% else %>
+  element.style.color = "red";
+
+<% end %>
