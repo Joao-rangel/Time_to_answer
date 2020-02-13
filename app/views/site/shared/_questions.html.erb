@@ -3,21 +3,7 @@
     <div class="container pb-4">
       <div class="card">
         <h6 class="card-header bg-secondary text-white">
-          <span class="badge badge-pill 
-            <% case question.subject_id %>
-              <% when 1 %>
-                badge-warning
-              <% when 2 %>
-                badge-danger
-              <% when 3 %>
-                badge-info
-              <% when 4 %>
-                badge-success
-              <% else %>
-                badge-primary
-            <% end %>
-            "><%= question.subject.description %>
-          </span>
+          <%= link_to question.subject.description, "#", class:"badge badge-pill #{question_set_tag}"%>
           <%= question.description %>
         </h6>
         <div class="card-body">
