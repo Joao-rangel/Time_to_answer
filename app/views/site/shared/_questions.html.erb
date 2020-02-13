@@ -3,7 +3,8 @@
     <div class="container pb-4">
       <div class="card">
         <h6 class="card-header bg-secondary text-white">
-          <%= link_to question.subject.description, "#", class:"badge badge-pill #{question_set_tag}"%>
+          <%# O valor dentro do path(VALOR) será passado ao controller %>
+          <%= link_to question.subject.description, site_search_subject_path(question.subject_id, question.subject.description), class:"badge badge-pill #{question.set_tag_color}"%>
           <%= question.description %>
         </h6>
         <div class="card-body">

@@ -9,9 +9,28 @@ class Question < ApplicationRecord
     .includes(:answers, :subject).page(page).per(10)
   }
 
+  scope :subject_set, -> (subject_id, page) {
+    where(subject_id: subject_id) # quando vai buscar diretamente com = pode escrever assim
+    .includes(:answers, :subject).page(page).per(10)
+  }
+
   scope :order_desc, -> (page) {
     order('created_at desc').includes(:answers, :subject)
     .page(page).per(10)
   }
 
+  def set_tag_color
+    case self.subject.description
+    when 'Kids'
+      'badge-danger'
+    when 'Teens'
+      'badge-info'
+    when 'Standard'
+      'badge-success'
+    when 'Play & Fun' || 'Play and Fun'
+      'badge-warning'
+    else
+      'badge-primary'
+    end
+  end
 end

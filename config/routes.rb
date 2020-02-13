@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   namespace :site do
     get  'welcome/index'
     get  'search', to: 'search#questions'
+    #/:subject_id avisa que este será enviado ao controler / as: altera o path_helper
+    get  'subject/:subject_id/:subject_description', to: 'search#subject', as: 'search_subject'
     post 'answer', to: 'answer#question'
   end
 
