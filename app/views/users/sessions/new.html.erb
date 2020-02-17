@@ -1,6 +1,6 @@
 <div class="p-5">
   <div class="text-center">
-    <h1 class="h4 text-gray-900 mb-4">Bem vindo!</h1>
+    <h1 class="h4 text-gray-800 mb-4">Bem vindo!</h1>
   </div>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class:"user"}) do |f| %>
@@ -31,6 +31,6 @@
   </div>
 
   <div class="text-center">
-    <a class="small" href="register.html">Create an Account!</a>
+    <%= link_to 'Criar conta!', new_user_registration_path, class:"small" %>
   </div>
 </div>

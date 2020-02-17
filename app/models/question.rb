@@ -1,5 +1,5 @@
 class Question < ApplicationRecord
-  belongs_to :subject, inverse_of: :questions
+  belongs_to :subject, inverse_of: :questions, counter_cache: true
   has_many :answers
   # Active Record Nested Attributes
   accepts_nested_attributes_for :answers, reject_if: :all_blank, allow_destroy: true
@@ -21,16 +21,11 @@ class Question < ApplicationRecord
 
   def set_tag_color
     case self.subject.description
-    when 'Kids'
-      'badge-danger'
-    when 'Teens'
-      'badge-info'
-    when 'Standard'
-      'badge-success'
-    when 'Play & Fun' || 'Play and Fun'
-      'badge-warning'
-    else
-      'badge-primary'
+    when 'Kids' then 'badge-danger'
+    when 'Teens' then 'badge-info'
+    when 'Standard' then 'badge-success'
+    when 'Play & Fun' then 'badge-warning'
+    else 'badge-primary'
     end
   end
 end

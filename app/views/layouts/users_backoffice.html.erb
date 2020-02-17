@@ -20,7 +20,6 @@
     <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col menu_fixed">
-          <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0; height: 100px; background: #ffffff;">
               <a href="/" class="site_title" style="height: 80px; color: white;"><%= image_tag 'data:image/png;base64,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',
                height: '80' %></a>
@@ -34,8 +33,8 @@
                 <%= image_tag 'img.jpg', alt:"...", class:"img-circle profile_img" %>
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <span class="text-white">Olá,</span>
+                <h2 class="text-white">John Doe</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -45,125 +44,31 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>General</h3>
+                <h3>Opções</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="index.html">Dashboard</a></li>
-                      <li><a href="index2.html">Dashboard2</a></li>
-                      <li><a href="index3.html">Dashboard3</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="form.html">General Form</a></li>
-                      <li><a href="form_advanced.html">Advanced Components</a></li>
-                      <li><a href="form_validation.html">Form Validation</a></li>
-                      <li><a href="form_wizards.html">Form Wizard</a></li>
-                      <li><a href="form_upload.html">Form Upload</a></li>
-                      <li><a href="form_buttons.html">Form Buttons</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="general_elements.html">General Elements</a></li>
-                      <li><a href="media_gallery.html">Media Gallery</a></li>
-                      <li><a href="typography.html">Typography</a></li>
-                      <li><a href="icons.html">Icons</a></li>
-                      <li><a href="glyphicons.html">Glyphicons</a></li>
-                      <li><a href="widgets.html">Widgets</a></li>
-                      <li><a href="invoice.html">Invoice</a></li>
-                      <li><a href="inbox.html">Inbox</a></li>
-                      <li><a href="calendar.html">Calendar</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="tables.html">Tables</a></li>
-                      <li><a href="tables_dynamic.html">Table Dynamic</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="chartjs.html">Chart JS</a></li>
-                      <li><a href="chartjs2.html">Chart JS2</a></li>
-                      <li><a href="morisjs.html">Moris JS</a></li>
-                      <li><a href="echarts.html">ECharts</a></li>
-                      <li><a href="other_charts.html">Other Charts</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                    </ul>
-                  </li>
+                  <li><a href="javascript:void(0)"><i class="fa fa-user"></i>Dados do perfil</a></li>
                 </ul>
               </div>
-              <div class="menu_section">
-                <h3>Live On</h3>
-                <ul class="nav side-menu">
-                  <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="e_commerce.html">E-commerce</a></li>
-                      <li><a href="projects.html">Projects</a></li>
-                      <li><a href="project_detail.html">Project Detail</a></li>
-                      <li><a href="contacts.html">Contacts</a></li>
-                      <li><a href="profile.html">Profile</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="page_403.html">403 Error</a></li>
-                      <li><a href="page_404.html">404 Error</a></li>
-                      <li><a href="page_500.html">500 Error</a></li>
-                      <li><a href="plain_page.html">Plain Page</a></li>
-                      <li><a href="login.html">Login Page</a></li>
-                      <li><a href="pricing_tables.html">Pricing Tables</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                        <li><a href="#level1_1">Level One</a>
-                        <li><a>Level One<span class="fa fa-chevron-down"></span></a>
-                          <ul class="nav child_menu">
-                            <li class="sub_menu"><a href="level2.html">Level Two</a>
-                            </li>
-                            <li><a href="#level2_1">Level Two</a>
-                            </li>
-                            <li><a href="#level2_2">Level Two</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li><a href="#level1_2">Level One</a>
-                        </li>
-                    </ul>
-                  </li>                  
-                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
-                </ul>
-              </div>
-
             </div>
             <!-- /sidebar menu -->
 
             <!-- /menu footer buttons -->
             <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
+              <a data-toggle="tooltip" data-placement="top" title="Settings" style="color: #ddd;">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen" style="color: #ddd;">
                 <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
+              <a data-toggle="tooltip" data-placement="top" title="Lock" style="color: #ddd;">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html" style="color: #ddd;">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>
             <!-- /menu footer buttons -->
           </div>
-        </div>
 
         <!-- top navigation -->
         <div class="top_nav">
@@ -176,20 +81,16 @@
                   <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                       <%= image_tag 'img.jpg', alt:"" %>
-                      <%= current_user.email %>
+                      <span class="text-white"><%= current_user.email %></span>
                     </a>
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                       <%= link_to destroy_user_session_path, method: :delete do %>
-                        <button class="dropdown-item" ><i class="fa fa-sign-out pull-right"></i> Logout</button>
+                        <button class="dropdown-item" ><i class="fa fa-sign-out pull-right"></i>Logout</button>
                       <% end %>
                     </div>
                   </li>
   
                   <li role="presentation" class="nav-item dropdown open">
-                    <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
-                      <i class="fa fa-envelope-o"></i>
-                      <span class="badge bg-green">6</span>
-                    </a>
                     <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
                       <li class="nav-item">
                         <a class="dropdown-item">

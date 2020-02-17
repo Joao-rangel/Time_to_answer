@@ -1,29 +1,29 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="p-5">
+  <div class="text-center">
+    <h1 class="h4 text-gray-800 mb-4">Cadastre-se!</h1>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class:"user"})  do |f| %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="form-group">
+      <%= f.email_field :email, autofocus: true, placeholder:"Email", class:"form-control form-control-user" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <div class="form-group">
+      <%= f.password_field :password, placeholder:"Nova Senha", class:"form-control form-control-user" %>
+    </div>
 
-<%= render "users/shared/links" %>
+    <div class="form-group">
+      <%= f.password_field :password_confirmation, placeholder:"Confirmar Senha", class:"form-control form-control-user" %>
+    </div>
+
+    <%= f.submit "Criar conta", class:"btn btn-danger btn-user btn-block" %>
+    
+  <% end %>
+
+  <hr>
+  <div class="text-center">
+    <%= link_to 'Já sou cadastrado!', new_user_session_path, class:"small" %>
+  </div>
+</div>

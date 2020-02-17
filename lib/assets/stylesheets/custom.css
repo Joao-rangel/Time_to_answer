@@ -892,7 +892,7 @@
   content: "\e260"; }
 
 .left_col {
-  background-image: linear-gradient(180deg, #d53838 10%, #e44723 100%); }
+  background-image: linear-gradient(180deg, #d53838 0%, #e44723 100%); }
 
 .container {
   width: 100%;
@@ -1466,7 +1466,7 @@ a:hover, a:focus {
   padding: 13px 15px 12px; }
 
 .nav.side-menu > li.current-page, .nav.side-menu > li.active {
-  border-right: 5px solid #1ABB9C; }
+  border-right: 5px solid #fff; }
 
 .nav li.current-page {
   background: rgba(255, 255, 255, 0.05); }
@@ -2316,7 +2316,7 @@ span.right {
   padding: 2px 0 0 0;
   position: fixed;
   width: 230px;
-  background: #afafaf; }
+  background: #ccc; }
 
 .sidebar-footer a {
   padding: 7px 0 3px;

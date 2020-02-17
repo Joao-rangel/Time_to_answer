@@ -1,7 +1,7 @@
 <% if @admin.errors.any? %> <%# exibe mensagem caso algum erro impeça a edição %>
   <div class="card bg-danger text-white shadow">
     <div class="card-body">
-      Atenção
+      Atenção!
         <% @admin.errors.full_messages.each do |message| %>
           <li class="small"><%= message %></li>
         <% end %>
