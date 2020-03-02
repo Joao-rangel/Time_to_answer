@@ -23,6 +23,3 @@ Rails.application.config.assets.precompile += %w( custom.js custom.css
                                                   sb-admin-2.js sb-admin-2.css
                                                   img.jpg img_admin.jpg
                                                   dataTables.bootstrap4.css dataTables.bootstrap4.js datatables-demo.js)
-
-# /vendor/assets
-Rails.application.config.assets.precompile += %w( jquery-2.2.3/dist/jquery.js )
