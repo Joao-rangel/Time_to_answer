@@ -9,4 +9,5 @@
 //= require sidebarmenu
 //= require sticky-kit/dist/sticky-kit
 //= require custom_ma
+//= require bootstrap-growl-ifightcrime/jquery.bootstrap-growl
 //= require jQuery.style.switcher

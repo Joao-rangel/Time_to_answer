@@ -7,50 +7,85 @@
 <div class="row">
   <div class="col-12">
     <div class="card">
+      <% if @user.errors.any? %> <%# exibe mensagem caso algum erro impeça a edição %>
+        <div class="card bg-danger text-white shadow">
+          <div class="card-body">
+            Atenção!
+              <% @user.errors.full_messages.each do |message| %>
+                <li class="small"><%= message %></li>
+              <% end %>
+          </div>
+        </div>
+      <% end %>
+
       <div class="card-block m-3">
-        <form class="form-horizontal form-material">
-          <div class="form-group">
-            <label class="col-md-12">Full Name</label>
-            <div class="col-md-12">
-              <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line">
+        <%= form_with(url: users_backoffice_profile_path,model: @user, local: true, class:"form-horizontal form-material") do |form| %><%# local: true ->envia em HTML para o controler; padrão = JS %>
+         
+          <%= form.fields_for :user_profile do |profile_form| %>
+            <div class="row mt-3">
+              <div class="col form-group">
+                <div class="col-md-12">
+                  <%= profile_form.label :first_name %>
+                  <%= profile_form.text_field :first_name, class:"form-control form-control-line" %>
+                </div>
+              </div>
+              <div class="col form-group">
+                <div class="col-md-12">
+                  <%= profile_form.label :last_name %>
+                  <%= profile_form.text_field :last_name, class:"form-control form-control-line" %>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <label for="example-email" class="col-md-12">Email</label>
-            <div class="col-md-12">
-              <input type="email" placeholder="johnathan@admin.com" class="form-control form-control-line" name="example-email" id="example-email">
+
+            <div class="row">
+              <div class="col form-group">
+                <div class="col-md-12">
+                  <%= profile_form.label :gender %>
+                  <%= profile_form.select :gender, [['Masculino', 'M'], ['Feminino', 'F']], {}, class:"form-control form-control-line" %>
+                </div>
+              </div>
+              <div class="col form-group">
+                <div class="col-md-12">
+                  <%= profile_form.label :birthdate %>
+                  <%= profile_form.date_field :birthdate, class:"form-control form-control-line" %>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <label class="col-md-12">Password</label>
-            <div class="col-md-12">
-              <input type="password" value="password" class="form-control form-control-line">
+
+            <div class="row">
+              <div class="col form-group">
+                <div class="col-md-12">
+                  <%= profile_form.label :city %>
+                  <%= profile_form.text_field :city, class:"form-control form-control-line" %>
+                </div>
+              </div>
+              <div class="col-4 form-group">
+                <div class="col-md-12">
+                  <%= profile_form.label :state %>
+                  <%= profile_form.text_field :state, class:"form-control form-control-line" %>
+                </div>
+              </div>
             </div>
+          <% end %>
+
+          <div class="form-group col-md-12">
+              <%= form.label :email %>
+              <%= form.text_field :email, class:"form-control form-control-line", readonly: true %><%# readonly: não permite edição %>
           </div>
-          <div class="form-group">
-            <label class="col-md-12">Phone No</label>
-            <div class="col-md-12">
-              <input type="text" placeholder="123 456 7890" class="form-control form-control-line">
-            </div>
+
+          <div class="form-group col-md-12">
+            <%= form.label :password %>
+            <%= form.password_field :password, class:"form-control form-control-line" %>
           </div>
-          <div class="form-group">
-            <label class="col-sm-12">Estado</label>
-            <div class="col-sm-12">
-              <select class="form-control form-control-line">
-                <option>Rio de Janeiro</option>
-                <option>Minas Gerais</option>
-                <option>São Paulo</option>
-                <option>Espírito Santo</option>
-                <option>Outro</option>
-              </select>
-            </div>
+          <div class="form-group col-md-12">
+            <%= form.label :password_confirmation %>
+            <%= form.password_field :password_confirmation, class:"form-control form-control-line" %>
           </div>
-          <div class="form-group">
-            <div class="col-sm-12">
-              <button class="btn btn-info">Atualizar Perfil</button>
-            </div>
+
+          <div class="form-group col-sm-12">
+            <button class="btn btn-info">Atualizar Perfil</button>
           </div>
-        </form>
+        <% end %>
       </div>
     </div>
   </div>

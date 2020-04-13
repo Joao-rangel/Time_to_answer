@@ -16,9 +16,19 @@ pt-BR:
         created_at: Criado em
         updated_at: Atualizado em
       user:
-        email: Email        
         created_at: Criado em
         updated_at: Atualizado em
+        password: Senha
+        password_confirmation: Confirmação de senha
+      user_profile:
+        created_at: Criado em
+        updated_at: Atualizado em
+        first_name: Nome
+        last_name: Sobrenome
+        gender: Sexo
+        birthdate: Data de nascimento
+        city: Cidade
+        state: Estado
       subject:
         description: Descrição
       question:
