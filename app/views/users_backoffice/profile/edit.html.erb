@@ -1,3 +1,5 @@
+<%= render partial: 'users_backoffice/shared/modal_avatar' %>
+
 <!-- Bread crumb and right sidebar toggle -->
 <div class="row page-titles">
   <h3 class="text-themecolor ml-4 m-b-0 m-t-0">Perfil</h3>
@@ -5,7 +7,23 @@
 
 <!-- Start Page Content -->
 <div class="row">
-  <div class="col-12">
+  <div class="col-lg-4 col-xlg-3 col-md-5">
+    <div class="card">
+      <div class="card-block m-4 text-center">
+        <%= link_to '#', 'data-toggle':"modal", 'data-target':"#avatarModal" do %>
+          <%= image_tag set_avatar, alt:"user_profile", class:"img-circle m-t-20", width:"150", id:"avatarImgProfile" %>
+        <% end %>
+        <h4 class="card-title m-t-15"><%= "#{@user.user_profile.first_name} #{@user.user_profile.last_name}" %></h4>
+        <h6 class="card-subtitle"><%= @user.email %></h6>
+        <div class="row justify-content-center">
+          <div class="col-4"><a href="javascript:void(0)" class="link"><i class="fa fa-users m-r-10"></i> <font class="font-medium">254</font></a></div>
+          <div class="col-4"><a href="javascript:void(0)" class="link"><i class="fa fa-image m-r-10"></i> <font class="font-medium">54</font></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-8 col-xlg-9 col-md-12">
     <div class="card">
       <% if @user.errors.any? %> <%# exibe mensagem caso algum erro impeça a edição %>
         <div class="card bg-danger text-white shadow">

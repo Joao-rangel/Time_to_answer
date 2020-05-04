@@ -1,0 +1,11 @@
+$('#avatarModal').modal('hide');
+
+$.bootstrapGrowl('Imagem de perfil atualizada', {
+  type: 'primary',
+  align: 'center',
+  width: 'auto'
+});
+
+document.getElementById('avatarImgTopBar').src = "<%= url_for(@user.user_profile.avatar) %>";
+document.getElementById('avatarImgModal').src = "<%= url_for(@user.user_profile.avatar) %>";
+document.getElementById('avatarImgProfile').src = "<%= url_for(@user.user_profile.avatar) %>";

@@ -24,23 +24,25 @@
     <div class="container">
       <%= link_to 'Time To Answer', root_path, class:"navbar-brand" %>
 
-      <%# form search - method get para aparecer na url %>
-      <%= form_with(url: site_search_path, local: true, method: :get, class:"form-inline mr-auto mx-2 navbar-form") do |form| %>
-        <div class="input-group">
-          <%= form.text_field :term, class:"form-control", placeholder:"Procurar..." %>
-          <div class="input-group-append">
-            <button class="btn btn-primary" type="submit">
-              <i class="fa fa-search fa-fw"></i>
-            </button>
-          </div>
-        </div>
-      <% end %>
-
-      <%# Links à direita na navbar %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <%# Responsible button %>
+      <button class="navbar-toggler mt-1 mb-2" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarResponsive">
+        <%# form search - method get para aparecer na url %>
+        <%= form_with(url: site_search_path, local: true, method: :get, class:"form-inline mr-auto mx-2 mt-auto navbar-form") do |form| %>
+          <div class="input-group">
+            <%= form.text_field :term, class:"form-control", placeholder:"Procurar..." %>
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="submit">
+                <i class="fa fa-search fa-fw"></i>
+              </button>
+            </div>
+          </div>
+        <% end %>
+
+        <%# Links à direita na navbar %>
         <ul class="navbar-nav ml-auto">
           <%= link_to 'Home', root_path, class:"nav-link active" %>
           <% unless user_signed_in? %> 
@@ -68,7 +70,7 @@
   <!-- Image Section - set the background image for the header in the line below -->
   <section class="pt-1 bg-image-full" style="background-image: url('https://images-americanas.b2w.io/produtos/01/00/images/94770/2/94770293_1GG.jpg'); height: 180px;">
     <section class="container">  
-      <div class="card pt-4 pb-3 px-5 mt-5" style="width: 30rem;">
+      <div class="card pt-4 pb-3 px-5 mt-5" style="max-width: 30rem;">
         <h5><%= set_site_message %></h5>
       </div>
     </section>

@@ -29,6 +29,7 @@ pt-BR:
         birthdate: Data de nascimento
         city: Cidade
         state: Estado
+        avatar: Imagem de perfil
       subject:
         description: Descrição
       question:

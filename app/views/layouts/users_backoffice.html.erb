@@ -27,88 +27,88 @@
       <!-- Main wrapper - style you can find in pages.scss -->
     <div id="main-wrapper">
       <!-- Topbar -->        
-    <header class="topbar" style="height: 80px;">
-      <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
-        <div class="navbar-header">
+      <header class="topbar" style="height: 80px;">
+        <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
           <!-- Logo icon -->
-          <%= link_to root_path, class:"site_title" do %>
-            <%= image_tag 'data:image/png;base64,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',
-            height: '80' %>
-          <% end %>
-        </div>
-
-          <!-- Sidebar Toggle (Topbar) -->
-        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3 text-white">
-          <i class="fa fa-bars"></i>
-        </button>
-
-          <!-- search bar -->
-        <div class="nav-item hidden-sm-down">
-          <form class="app-search p-l-20">
-            <input type="text" class="form-control" placeholder="Procurar...">
-            <a class="srh-btn"><i class="fa fa-search"></i></a>
-          </form>
-        </div>
-
-        <div class="nav-item dropdown no-arrow ml-auto">
-          <a class="nav-link dropdown-toggle waves-effect waves-dark" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag 'img.jpg', alt:"user", class:"profile-pic m-r-10" %>
-            <span class="mr-2 d-none d-lg-inline text-white"><%= current_user.email %></span>
-          </a>
-          <div class="dropdown-menu">
-            <%= link_to destroy_user_session_path, method: :delete, class:"dropdown-item" do %>
-              <i class="fa fa-sign-out fa-sm fa-fw mr-2"></i> Sair
+          <div class="navbar-header">
+            <%= link_to root_path, class:"navbar-brand" do %>
+                <b><%= image_tag 'SIB_logo.png', alt:"SIB", class:"dark-logo", height: '72' %></b>
+                <span><%= image_tag 'SIB_texto.png', alt:"Sist. Impulse", class:"dark-logo", height: '80' %></span>
             <% end %>
           </div>
-        </div>
-      </nav>
-    </header> <!-- End of Topbar -->
 
-    <!-- Left Sidebar - style you can find in sidebar.scss  -->
-    <aside class="left-sidebar">
-      <!-- Sidebar scroll-->
-      <div class="scroll-sidebar">
-        <!-- Sidebar navigation-->
-        <nav class="sidebar-nav">
-          <ul id="sidebarnav">
-            <li>
-              <%= link_to users_backoffice_welcome_index_path, class:"waves-effect" do %>
-                <i class="fa fa-home m-r-10"></i>Início
+          <!-- Sidebar Toggle (Topbar) -->
+          <%= link_to "javascript:void(0)", class:"nav-link nav-toggler waves-effect d-md-none text-white" do %>
+            <i class="fa fa-bars"></i>
+          <% end %>
+
+            <!-- search bar
+          <div class="nav-item hidden-sm-down">
+            <form class="app-search p-l-20">
+              <input type="text" class="form-control" placeholder="Procurar...">
+              <a class="srh-btn"><i class="fa fa-search"></i></a>
+            </form>
+          </div> -->
+
+          <div class="nav-item dropdown no-arrow ml-auto">
+            <a class="nav-link dropdown-toggle waves-effect waves-dark" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag set_avatar, alt:"user", class:"profile-pic m-r-10", id:"avatarImgTopBar" %>
+              <span class="mr-2 d-none d-lg-inline text-white"><%= current_user.email %></span>
+            </a>
+            <div class="dropdown-menu">
+              <%= link_to destroy_user_session_path, method: :delete, class:"dropdown-item" do %>
+                <i class="fa fa-sign-out fa-sm fa-fw mr-2"></i> Sair
               <% end %>
-            </li>
-            <li>
-              <%= link_to users_backoffice_profile_path, class:"waves-effect" do %>
-                <i class="fa fa-user m-r-10"></i>Perfil
-              <% end %>
-            </li>
-          </ul>
+            </div>
+          </div>
         </nav>
-        <!-- End Sidebar navigation -->
-      </div>
-      <!-- End Sidebar scroll-->
-    </aside> <!-- End Left Sidebar -->
-    
-    <!-- Page wrapper  -->
-    <div class="page-wrapper">
-      <!-- Container fluid  -->
-      <div class="container-fluid">
-        <%= yield %>
-      </div>
+      </header> <!-- End of Topbar -->
 
-      <footer class="footer text-center">
-        © 2020 Joao Rangel
-      </footer>
-    </div>
+      <!-- Left Sidebar - style you can find in sidebar.scss  -->
+      <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+          <!-- Sidebar navigation-->
+          <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+              <li>
+                <%= link_to users_backoffice_welcome_index_path, class:"waves-effect" do %>
+                  <i class="fa fa-home m-r-10"></i>Início
+                <% end %>
+              </li>
+              <li>
+                <%= link_to users_backoffice_profile_path, class:"waves-effect" do %>
+                  <i class="fa fa-user m-r-10"></i>Perfil
+                <% end %>
+              </li>
+            </ul>
+          </nav>
+          <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+      </aside> <!-- End Left Sidebar -->
+      
+      <!-- Page wrapper  -->
+      <div class="page-wrapper" style="padding-top: 0px;">
+        <!-- Container fluid  -->
+        <div class="container-fluid">
+          <%= yield %>
+        </div>
+
+        <footer class="footer text-center">
+          © 2020 Joao Rangel
+        </footer>
+      </div>
     </div>
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'users_backoffice' %>
   
-  <% if notice %>
-    <%= javascript_tag do %>
-      $.bootstrapGrowl('<%= notice %>', {type: 'primary', align: 'center', width: 'auto'});
+    <% if notice %>
+      <%= javascript_tag do %>
+        $.bootstrapGrowl('<%= notice %>', {type: 'primary', align: 'center', width: 'auto'});
+      <% end %>
     <% end %>
-  <% end %>
 
   </body>
 
