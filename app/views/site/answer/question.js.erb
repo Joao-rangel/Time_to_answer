@@ -2,10 +2,12 @@ var given_asnswer = document.getElementById("answer_option_<%= @answer.id %>");
   
 given_asnswer.style.fontWeight = "bold";
 
-<% if @answer.correct %>
-  given_asnswer.style.color = "green";
-
+<% if user_signed_in? %>
+  <% if @answer.correct %>
+    given_asnswer.style.color = "green";
+  <% else %>
+    given_asnswer.style.color = "red";
+  <% end %>
 <% else %>
-  given_asnswer.style.color = "red";
-
+    $.bootstrapGrowl('Você deve fazer <%= link_to 'Login', new_user_session_path, class:"alert-link" %> para verificar a resposta.', {type: 'danger', align: 'center', width: 'auto'});
 <% end %>
