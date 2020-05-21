@@ -4,13 +4,39 @@
 
 <!-- Start Page Content -->
 <div class="row">
-  <div class="col-12">
+  <div class="col-sm-4">
     <div class="card">
       <div class="card-block m-3">
-        <h1>UsersBackoffice::Welcome#index</h1>
-        <p>Find me in app/views/users_backoffice/welcome/index.html.erb</p>
-
-        <%= link_to '[Exit]', destroy_user_session_path, method: :delete %>
+        <h4 class="card-title">Answered questions</h4>
+        <h2 class="text-center"><%= @user_statistics.total_questions %></h2>
+        <span class="text-warning">100%</span>
+        <div class="progress" style="height: 10px;">
+          <div class="progress-bar bg-warning" role="progressbar" style="width: 100%;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-block m-3">
+        <h4 class="card-title">Correct questions</h4>
+        <h2 class="text-center"><%= @user_statistics.right_questions %></h2>
+        <span class="text-success"><%= "#{@user_statistics.right_ratio}%" %></span>
+        <div class="progress" style="height: 10px;">
+          <div class="progress-bar bg-success" role="progressbar" style="width: <%= @user_statistics.right_ratio %>%;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-block m-3">
+        <h4 class="card-title">Wrong questions</h4>
+        <h2 class="text-center"><%= @user_statistics.wrong_questions %></h2>
+        <span class="text-info"><%= "#{@user_statistics.wrong_ratio}%" %></span>
+        <div class="progress" style="height: 10px;">
+          <div class="progress-bar bg-info" role="progressbar" style="width: <%= @user_statistics.wrong_ratio %>%;"></div>
+        </div>
       </div>
     </div>
   </div>
