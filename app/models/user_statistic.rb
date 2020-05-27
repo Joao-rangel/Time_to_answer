@@ -6,7 +6,7 @@ class UserStatistic < ApplicationRecord
   end
 
   def right_ratio
-    (100 * self.right_questions / self.total_questions).round
+    self.total_questions == 0 ? 100 : (100 * self.right_questions / self.total_questions).round
   end
 
   def wrong_ratio
