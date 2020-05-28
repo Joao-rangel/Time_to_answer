@@ -6,7 +6,7 @@
         <div class="row no-gutters align-items-center">
           <div class="col mr-2">
             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Users</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @total_users.value %></div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @total_users ? @total_users.value : 0 %></div>
           </div>
           <div class="col-auto">
             <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -21,7 +21,7 @@
         <div class="row no-gutters align-items-center">
           <div class="col mr-2">
             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Topics</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @total_subjects %></div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @total_subjects ? @total_subjects.value : 0 %></div>
           </div>
           <div class="col-auto">
             <i class="fas fa-tags fa-2x text-gray-300"></i>
@@ -36,7 +36,7 @@
         <div class="row no-gutters align-items-center">
           <div class="col mr-2">
             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Questions</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @total_questions %></div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @total_questions ? @total_questions.value : 0 %></div>
           </div>
           <div class="col-auto">
             <i class="fas fa-comments fa-2x text-gray-300"></i>

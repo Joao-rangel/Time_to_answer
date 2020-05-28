@@ -8,11 +8,12 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :user_profile, reject_if: :all_blank # Active Record Nested Attributes
 
   # Callback
-  after_create :set_statistic
-
-  private
-  
-  def set_statistic
+  after_create do
     AdminStatistic.set_event(AdminStatistic::EVENTS[:total_users])
   end
+
+  before_destroy do
+    AdminStatistic.set_event(AdminStatistic::EVENTS[:total_users], false)
+  end
+
 end
