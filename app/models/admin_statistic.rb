@@ -5,6 +5,19 @@ class AdminStatistic < ApplicationRecord
     total_questions: "TOTAL_QUESTIONS"
   }
 
+  scope :total_users, -> {
+    find_by_event(EVENTS[:total_users])
+  }
+
+  scope :total_subjects, -> {
+    find_by_event(EVENTS[:total_subjects])
+  }
+
+  scope :total_questions, -> {
+    find_by_event(EVENTS[:total_questions])
+  }
+
+  #class methods
   def self.set_event(event, add = true)
     admin_statistic = AdminStatistic.find_or_create_by(event: event)
     add ? admin_statistic.value += 1 : admin_statistic.value -= 1
