@@ -27,10 +27,9 @@
 
   <hr>
   <div class="text-center">
-    <a class="small" href="forgot-password.html">Forgot Password?</a>
+    <%= link_to 'Esqueceu sua senha?', new_user_password_path, class:"small" %>
   </div>
-
-  <div class="text-center">
+  <div class="text-center mt-1">
     <%= link_to 'Criar conta!', new_user_registration_path, class:"small" %>
   </div>
 </div>

@@ -1,16 +1,24 @@
-<h2>Forgot your password?</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<div class="p-5">
+  <div class="text-center">
+    <h1 class="h4 text-gray-800 mb-4">Esqueceu sua senha?</h1>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class:"user", method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="form-group">
+      <%= f.email_field :email, autofocus: true, placeholder:"Email", class:"form-control form-control-user" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.submit "Recuperar senha", class:"btn btn-danger btn-user btn-block" %>
+
+  <% end %>
+
+  <hr>
+  <div class="text-center">
+    <%= link_to 'Já sou cadastrado!', new_user_session_path, class:"small" %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+  <div class="text-center mt-1">
+    <%= link_to 'Criar conta!', new_user_registration_path, class:"small" %>
   </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>
