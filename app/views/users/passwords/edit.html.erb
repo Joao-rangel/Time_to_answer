@@ -1,25 +1,29 @@
-<h2>Change your password</h2>
+<div class="p-5">
+  <div class="text-center">
+    <h1 class="h4 text-gray-800 mb-4">Altere sua senha!</h1>
+  </div>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name),  html: { class:"user", method: :put }) do |f| %>
   <%= f.hidden_field :reset_password_token %>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
-  </div>
+    <div class="form-group">
+      <%= f.password_field :password, autofocus: true, placeholder:"Nova senha", class:"form-control form-control-user" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="form-group">
+      <%= f.password_field :password_confirmation, autofocus: true, placeholder:"Confirmar nova senha", class:"form-control form-control-user" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
 
-<%= render "users/shared/links" %>
+    <%= f.submit "Alterar senha", class:"btn btn-danger btn-user btn-block" %>
+
+  <% end %>
+
+  <hr>
+  <div class="text-center">
+    <%= link_to 'Já sou cadastrado!', new_user_session_path, class:"small" %>
+  </div>
+  <div class="text-center mt-1">
+    <%= link_to 'Criar conta!', new_user_registration_path, class:"small" %>
+  </div>
+</div>
