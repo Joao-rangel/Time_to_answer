@@ -5,13 +5,9 @@ class Question < ApplicationRecord
   accepts_nested_attributes_for :answers, reject_if: :all_blank, allow_destroy: true
 
   # Callback
-  after_create do
-    AdminStatistic.set_event(AdminStatistic::EVENTS[:total_questions])
-  end
+  after_create { AdminStatistic.set_event(AdminStatistic::EVENTS[:total_questions]) }
 
-  before_destroy do
-    AdminStatistic.set_event(AdminStatistic::EVENTS[:total_questions], false)
-  end
+  before_destroy { AdminStatistic.set_event(AdminStatistic::EVENTS[:total_questions], false) }
 
   scope :like_search, -> (term, page) {
     where("lower(description) LIKE ?", "%#{term.downcase}%")

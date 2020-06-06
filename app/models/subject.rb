@@ -2,12 +2,8 @@ class Subject < ApplicationRecord
   has_many :questions
 
   # Callback
-  after_create do
-    AdminStatistic.set_event(AdminStatistic::EVENTS[:total_subjects])
-  end
+  after_create { AdminStatistic.set_event(AdminStatistic::EVENTS[:total_subjects]) }
 
-  before_destroy do
-    AdminStatistic.set_event(AdminStatistic::EVENTS[:total_subjects], false)
-  end
+  before_destroy { AdminStatistic.set_event(AdminStatistic::EVENTS[:total_subjects], false) }
 
 end
