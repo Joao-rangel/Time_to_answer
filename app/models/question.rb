@@ -4,11 +4,12 @@ class Question < ApplicationRecord
   # Active Record Nested Attributes
   accepts_nested_attributes_for :answers, reject_if: :all_blank, allow_destroy: true
 
-  # Callback
+  # Callback to count questions
   after_create { AdminStatistic.set_event(AdminStatistic::EVENTS[:total_questions]) }
 
   before_destroy { AdminStatistic.set_event(AdminStatistic::EVENTS[:total_questions], false) }
 
+  # lower & downcase = para buscar no db sem ser case-sensitive. %TXT% busca o string dentro de qualquer intervalo.
   scope :like_search, -> (term, page) {
     where("lower(description) LIKE ?", "%#{term.downcase}%")
     .includes(:answers, :subject).page(page).per(10)
@@ -23,15 +24,5 @@ class Question < ApplicationRecord
     order('created_at desc').includes(:answers, :subject)
     .page(page).per(10)
   }
-
-  def set_tag_color
-    case self.subject.description
-    when 'Kids' then 'badge-danger'
-    when 'Teens' then 'badge-info'
-    when 'Standard' then 'badge-success'
-    when 'Play & Fun' then 'badge-warning'
-    else 'badge-primary'
-    end
-  end
   
 end

@@ -1,6 +1,7 @@
 class Site::SearchController < SiteController
+  before_action :list_subjects
+
   def questions
-    # lower & downcase = para buscar no db sem ser case-sensitive. %TXT% busca o string dentro de qualquer intervalo.
     @questions = Question.like_search(params[:term], params[:page])
   end
 

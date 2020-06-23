@@ -4,7 +4,7 @@
       <div class="card">
         <h6 class="card-header bg-secondary text-white">
           <%# O valor dentro do path(VALOR) será passado ao controller %>
-          <%= link_to site_search_subject_path(question.subject_id, question.subject.description), class:"badge badge-pill #{question.set_tag_color}" do %>
+          <%= link_to site_search_subject_path(question.subject_id, question.subject.description), class:"badge badge-pill #{question.subject.set_tag_color}" do %>
             <%= question.subject.description %>
             <span class="badge badge-light">
               <%= question.subject.questions_count %>
