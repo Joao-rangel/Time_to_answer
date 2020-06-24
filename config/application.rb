@@ -30,8 +30,5 @@ module TimeToAnswer
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-
-    # Allow use of Web console at VirtualBox 
-    config.web_console.permissions = '127.0.0.1'
   end
 end
