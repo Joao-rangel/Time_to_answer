@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.0",
+    "@rails/webpacker": "5.1.1",
     "animate.css": "^3.7.2",
     "bootstrap": "^4.4.1",
     "bootstrap-growl-ifightcrime": "^1.1.0",
@@ -18,5 +19,8 @@
   "main": "index.js",
   "repository": "https://github.com/Joao-rangel/Time_to_answer.git",
   "author": "Joao-rangel <joao.vran@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.0"
+  }
 }

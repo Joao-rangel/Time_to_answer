@@ -6,8 +6,6 @@ ruby '2.4.9'
 gem "activesupport", ">= 5.2.4.3"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
-# Use pg as required for heroku
-gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -43,10 +41,13 @@ gem 'tty-spinner'
 gem 'faker' # gerar texto
 gem "cocoon"
 gem 'kaminari' # paginação
+gem 'webpacker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Use sqlite3 as required for Active Record and webpacker
+  gem 'sqlite3'
 end
 
 group :development do
@@ -58,6 +59,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :production do
+  # Use pg as required for heroku
+  gem 'pg'
+end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
