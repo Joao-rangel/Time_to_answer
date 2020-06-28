@@ -1,13 +1,12 @@
 class Subject < ApplicationRecord
   has_many :questions
-
   # set tag color helper
   def set_tag_color
-    case self.description
-    when 'Kids' then 'badge-danger'
-    when 'Teens' then 'badge-info'
-    when 'Standard' then 'badge-success'
-    when 'Play & Fun' then 'badge-warning'
+    case self.id % 5
+    when 1 then 'badge-warning'
+    when 2 then 'badge-danger'
+    when 3 then 'badge-info'
+    when 4 then 'badge-success'
     else 'badge-primary'
     end
   end
