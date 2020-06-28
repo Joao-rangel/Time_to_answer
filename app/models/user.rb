@@ -7,9 +7,8 @@ class User < ApplicationRecord
   has_one :user_profile  # connect tables
   accepts_nested_attributes_for :user_profile, reject_if: :all_blank # Active Record Nested Attributes
 
-  # Callback
+  # Callback counting users
   after_create { AdminStatistic.set_event(AdminStatistic::EVENTS[:total_users]) }
-
   before_destroy { AdminStatistic.set_event(AdminStatistic::EVENTS[:total_users], false) }
 
 end

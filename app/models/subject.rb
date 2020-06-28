@@ -13,7 +13,6 @@ class Subject < ApplicationRecord
 
   # Callback to count subjects
   after_create { AdminStatistic.set_event(AdminStatistic::EVENTS[:total_subjects]) }
-
   before_destroy { AdminStatistic.set_event(AdminStatistic::EVENTS[:total_subjects], false) }
 
 end

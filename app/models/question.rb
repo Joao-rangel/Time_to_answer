@@ -6,7 +6,6 @@ class Question < ApplicationRecord
 
   # Callback to count questions
   after_create { AdminStatistic.set_event(AdminStatistic::EVENTS[:total_questions]) }
-
   before_destroy { AdminStatistic.set_event(AdminStatistic::EVENTS[:total_questions], false) }
 
   # lower & downcase = para buscar no db sem ser case-sensitive. %TXT% busca o string dentro de qualquer intervalo.

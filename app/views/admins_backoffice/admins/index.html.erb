@@ -11,7 +11,7 @@
           <th>Email</th>            
           <th><%# criar novo adm %>
             <%= link_to new_admins_backoffice_admin_path, class:"btn btn-success btn-block" do %>
-                <i class="fas fa-user-plus" style="white"></i> Novo
+                <i class="fa fa-user-plus" style="white"></i> Novo
             <% end %>
           </th>
         </tr>
@@ -23,11 +23,11 @@
           <td><%= admin.email %></td>
           <td style="width: 113px">
             <%= link_to edit_admins_backoffice_admin_path(admin), class:"btn btn-primary btn-circle" do %><%# editar admin %>
-                <i class="fas fa-edit" style="white"></i>
+                <i class="fa fa-edit" style="white"></i>
             <% end %>
             <%# excluir admin %>
             <%= link_to admins_backoffice_admin_path(admin), method: :delete, class:"btn btn-danger btn-circle", data: {confirm: "Deseja realmente excluir o admin #{admin.email}?"} do %>
-                <i class="fas fa-trash-alt" style="white"></i>
+                <i class="fa fa-trash-alt" style="white"></i>
             <% end %>
           </td>
         </tr>
